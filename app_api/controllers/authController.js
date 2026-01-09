@@ -23,8 +23,6 @@ exports.register = async (req, res) => {
       });
     }
 
-    // ⬇️ JANGAN HASH DI SINI
-    // hashing dilakukan di UserSchema.pre("save")
     const user = new User({
       username,
       email,
@@ -46,7 +44,7 @@ exports.register = async (req, res) => {
     });
 
   } catch (error) {
-     console.error("ERROR REGISTER:", error); // ⬅️ PENTING
+     console.error("ERROR REGISTER:", error); 
   res.status(500).json({
     message: error.message,
     stack: error.stack
