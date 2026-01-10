@@ -38,7 +38,8 @@ const createNovel = async (req, res) => {
       penulis: req.body.penulis,   // ObjectId Penulis
       penerbit: req.body.penerbit, // ObjectId Penerbit
       tahunTerbit: req.body.tahunTerbit,
-      genre: req.body.genre
+      genre: req.body.genre,
+      deskripsi: req.body.deskripsi
     })
 
     const hasil = await novel.save()
@@ -62,6 +63,7 @@ const updateNovelById = async (req, res) => {
     if (req.body.penerbit) result.penerbit = req.body.penerbit
     if (req.body.tahunTerbit) result.tahunTerbit = req.body.tahunTerbit
     if (req.body.genre) result.genre = req.body.genre
+    if (req.body.deskripsi) result.deskripsi = req.body.deskripsi
 
     await result.save()
     res.status(200).json(result)
