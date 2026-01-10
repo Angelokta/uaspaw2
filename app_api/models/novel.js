@@ -24,6 +24,10 @@ const novelSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    deskripsi: {
+        type: String,
+        trim: true
+    },
     createdAt: {
         type: Date,
         default: Date.now

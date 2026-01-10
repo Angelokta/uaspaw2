@@ -10,7 +10,6 @@ var cors = require('cors');
 
 // route app_api
 const novelRouterAPI = require("./app_api/routes/novel");
-const sinopsisRouterAPI = require("./app_api/routes/sinopsis");
 const penulisRouterAPI = require("./app_api/routes/penulis");
 const penerbitRouterAPI = require("./app_api/routes/penerbit");
 const authRouterApi = require("./app_api/routes/auth");
@@ -44,7 +43,6 @@ app.use('/users', usersRouter);
 
 // API routes
 app.use('/api/novel', novelRouterAPI);
-app.use('/api/sinopsis', sinopsisRouterAPI);
 app.use('/api/penulis', penulisRouterAPI);
 app.use('/api/penerbit', penerbitRouterAPI);
 app.use('/api/auth', authRouterApi);
