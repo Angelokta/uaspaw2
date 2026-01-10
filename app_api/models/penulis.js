@@ -17,10 +17,6 @@ const penulisSchema = new mongoose.Schema({
     biografi: {
         type: String,
         trim: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
     }
 })
 

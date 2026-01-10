@@ -13,10 +13,6 @@ const penerbitSchema = new mongoose.Schema({
     },
     tahunBerdiri: {
         type: Number
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
     }
 })
 
