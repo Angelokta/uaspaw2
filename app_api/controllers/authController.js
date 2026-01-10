@@ -52,7 +52,6 @@ exports.register = async (req, res) => {
 }
 };
 
-// LOGIN
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
@@ -70,7 +69,6 @@ exports.login = async (req, res) => {
       });
     }
 
-    // bandingkan password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({
@@ -79,10 +77,10 @@ exports.login = async (req, res) => {
     }
 
     const token = jwt.sign(
-    { userId: user._id },
-    process.env.JWT_SECRET
-  );
-
+      { userId: user._id },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
 
     res.json({
       message: "Login berhasil",
@@ -96,3 +94,4 @@ exports.login = async (req, res) => {
     });
   }
 };
+
