@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // server routes
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
 
 // API routes
 app.use('/api/novel', novelRouterAPI);
