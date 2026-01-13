@@ -3,7 +3,7 @@ const Penulis = require("../models/penulis")
 // GET all
 const getAllPenulis = async (req, res) => {
   try {
-    const result = await Penulis.find()
+    const result = await Penulis.find().sort({ nama: 1 })
     res.status(200).json(result)
   } catch (error) {
     res.status(500).json({ message: error.message })
